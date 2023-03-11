@@ -1,0 +1,55 @@
+#X(n) = [|/16n Ju(n) 
+syms z n;
+a=ztrans(1/16^n);
+a = 16*z/(16*z-1);
+
+#Inverse Z-Transform
+#X(n) = Z-i[ X(Z)]
+#X(Z) = 3*Z/(Z+1) 
+syms Z n
+iztrans(3*Z/(Z+1));
+ANS=3*(-1)*n;
+
+#Pole Zero Diagramfora Function in Z Domain
+#X(Z) = |Z2+ Z.i|/|1-2Zi+3Z-a]
+b=[0 1 1]
+a=[1 -2 +3]
+roots(a)
+roots(b)
+zplane(b,a) 
+
+#Use the MATLAB command "roots" to determine the poles and zeros of
+#the following systems
+#1) 
+clc
+clear
+z=roots([1,0,2])
+p=roots([1,2,-1,1])
+
+#2)
+clc
+clear
+Z=roots([1,0,0, 1])
+p=roots ([1,0,2,0,1]) 
+
+# 3)
+clc
+clear
+z=roots([4,8,10])
+p=roots([2,8,18, 20])
+
+#Use the MATLAB command "pzmap" to plot the poles and zeros of the
+#following systems
+
+1)
+clc;
+clear;
+num=[1,0,0,1];
+den=[1, 0,2,0,1];
+systf=tf (num, den)
+pzmap (systf) 
+
+2)
+
+
+
